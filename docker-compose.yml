@@ -8,11 +8,11 @@ services:
     ports:
       - "8000:8000"
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DBHOST: ${POSTGRES_DBHOST}
-      POSTGRES_DBPORT: ${POSTGRES_DBPORT}
+      MARIA_DB: ${MARIA_DB}
+      MARIA_USER: ${MARIA_USER}
+      MARIA_PASSWORD: ${MARIA_PASSWORD}
+      MARIA_DBHOST: ${MARIA_DBHOST}
+      MARIA_DBPORT: ${MARIA_DBPORT}
       DJANGO_SECRETKEY: ${DJANGO_SECRETKEY}
     volumes:
       - ./Canteen:/Canteen
@@ -21,14 +21,19 @@ services:
     depends_on:
       - db
   db:
-    image: postgres
+    image: mariadb
     restart: always
     container_name: db
     ports:
-      - "5432:5432"
+      - "3306:3306"
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MARIA_DB}
+#      MYSQL_USER: ${MYSQL_USER}
+#      MYSQL_PASSWORD: ${MARIA_PASSWORD}
+      # CREATE USER 'freesia'@'%' IDENTIFIED BY '비밀번호';
+      # mariadb p-uroot -p
+      # GRANT ALL PRIVILEGES ON *.* TO 'freesia'@'%' WITH GRANT OPTION;
+      # FLUSH PRIVILEGES;
     volumes:
-      - D:/data/postgres/data/:/var/lib/postgresql/data
+      - D:/data/mariadb/data/:/var/lib/mysql

@@ -1,11 +1,12 @@
-FROM python:3.9-alpine3.13
+FROM python:3.10
 
 LABEL maintainer="mintwlsehtro@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
 
-COPY ./requirements.txt /tmp/requirements.txt
+ENV PYTHONUNBUFFERED 1
 
+COPY ./requirements.txt /tmp/requirements.txt
 COPY ./Canteen /Canteen
 
 WORKDIR /Canteen

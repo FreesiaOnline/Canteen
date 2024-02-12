@@ -24,11 +24,6 @@ function App() {
 function Home() {
   return (
     <div>
-      {/* 헤더 섹션 */}
-      <header style={{ backgroundColor: 'orange', color: 'white', padding: '20px' }}>
-        <h1>Welcome to our website!</h1>
-      </header>
-
       {/* 메인 배너 섹션 */}
       <section style={{ backgroundColor: 'darkorange', color: 'white', padding: '40px 0', textAlign: 'center' }}>
         <h2>Main Banner</h2>

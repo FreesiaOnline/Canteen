@@ -2,20 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Login from './auth/Login';
 import Signup from './auth/Signup';
+import Header from './mg/Header';
 
 function App() {
   return (
     <Router>
       <div>
-        {/* 네비게이션 바 */}
-        <header style={{ backgroundColor: 'orange', color: 'white', padding: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1>My Website</h1>
-          <nav>
-            <Link to="/" style={{ color: 'white', marginRight: '10px' }}>Home</Link>
-            <Link to="/login" style={{ color: 'white', marginRight: '10px' }}>Login</Link>
-            <Link to="/signup" style={{ color: 'white' }}>Signup</Link>
-          </nav>
-        </header>
+        <Header /> {/* 헤더 컴포넌트 사용 */}
 
         {/* 라우팅 설정 */}
         <Routes>

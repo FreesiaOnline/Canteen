@@ -124,15 +124,12 @@ WSGI_APPLICATION = 'Canteen.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MARIA_NAME'),
-        'USER': os.environ.get('MARIA_USER'),
-        'PASSWORD': os.environ.get('MARIA_PASSWORD'),
-        'HOST': os.environ.get('MARIA_DBHOST'),
-        'PORT': os.environ.get('MARIA_DBPORT'),
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES', innodb_strict_mode=1",
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_DBHOST'),
+        'PORT': os.environ.get('POSTGRES_DBPORT'),
     }
 }
 

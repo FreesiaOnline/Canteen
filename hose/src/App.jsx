@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Login from './auth/Login';
 import Signup from './auth/Signup';
 import Header from './mg/Header';
+import Footer from './mg/Footer'
 
 function App() {
   return (
@@ -55,10 +56,7 @@ function Home() {
         <p>Some information about the company or website</p>
       </section>
 
-      {/* 푸터 섹션 */}
-      <footer style={{ backgroundColor: 'orange', color: 'white', textAlign: 'center', padding: '10px' }}>
-        <p>&copy; 2024 My Website</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

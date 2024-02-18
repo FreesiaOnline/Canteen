@@ -32,8 +32,9 @@ services:
 #      MYSQL_USER: ${MYSQL_USER}
 #      MYSQL_PASSWORD: ${MARIA_PASSWORD}
       # CREATE USER 'freesia'@'%' IDENTIFIED BY '비밀번호';
-      # mariadb p-uroot -p
+      # mariadb -uroot -p
       # GRANT ALL PRIVILEGES ON *.* TO 'freesia'@'%' WITH GRANT OPTION;
+      # GRANT ALL PRIVILEGES on management.* to 'freesia'@'%';
       # FLUSH PRIVILEGES;
     volumes:
       - D:/data/mariadb/data/:/var/lib/mysql

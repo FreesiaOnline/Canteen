@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // React Router의 Link 컴포넌트를 import 합니다.
 import './Login.css'; // CSS 파일을 import 합니다.
 
 function Login() {
@@ -38,6 +39,7 @@ function Login() {
           />
           <button type="submit" className="button">Login</button>
         </form>
+        <p>Don't have an account? <Link to="/signup">Sign up</Link></p> {/* 회원가입 링크 추가 */}
       </div>
     </div>
   );
